@@ -1,0 +1,5 @@
+{
+  "test": "test in english",
+  "introduction": "Hello, my name is {{name}}",
+  "confirm": "Confirm"
+}

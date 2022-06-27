@@ -1,0 +1,6 @@
+{
+  "test": "test in romana",
+  "introduction": "Salut, numele meu este {{name}}",
+  "confirm": "Confirma"
+
+}
