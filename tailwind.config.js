@@ -1,0 +1,131 @@
+module.exports = {
+	content: [
+		'./pages/**/*.{js,ts,jsx,tsx}',
+		'./src/javascript/components/**/*.{js,ts,jsx,tsx}',
+	],
+	theme: {
+		extend: {
+			colors: {
+				'yellow1': '#FACD2D',
+				'yellow2': '#FCD980',
+				'blue1': '#1C3553',
+				'gray1': '#717171',
+				'gray2': '#F4F6FC',
+				'gray3': 'rgba(0,0,0,0.7)',
+				'gray4': 'rgba(244,246,252,0.5)',
+				'gray5': 'rgba(0,0,0,0.87)',
+				'gray6': '#ECECF1',
+				'gray7': 'rgba(255, 255, 255, 0.2)',
+				'gray8': 'rgba(66,66,66,0.6)',
+				'gray9': '#D6D6D6',
+				'lightGray1': '#CFCFCF',
+				'green1': '#2CBC87',
+				'green2': 'rgba(44, 188, 135, 0.5)',
+				'white07': 'rgba(255,255,255,0.7)',
+				'white006': 'rgba(255,255,255,0.06)',
+				'white01': 'rgba(255,255,255,0.1)',
+			},
+			height: {
+				'23': '5.75rem',
+				'18.4': '4.6rem',
+				'15': '3.75rem',
+				'167': '41.75rem',
+				'123.75': '30.9375rem',
+				'165.25': '41.3125rem',
+				'99': '24.75rem',
+				'12.8': '3.2rem',
+				'120': '30rem',
+				'131.2': '32.8rem',
+				'56.8': '14.2rem',
+				'124': '31rem',
+				'81': '20.25rem',
+				'57': '14.25rem',
+			},
+			width: {
+				'46.25': '11.5625rem',
+				'15': '3.75rem',
+				'57.5': '14.375rem',
+				'167.25': '41.8125rem',
+				'140': '35rem',
+				'101.25': '25.3125rem',
+				'133.8': '33.45rem',
+				'104': '26rem',
+				'46': '11.5rem',
+				'132.2': '33.05rem',
+				'81': '20.25rem',
+				'126.2': '31.55rem',
+				'168.6': '42.15rem',
+				'82.8': '20.7rem',
+				'79.2': '19.8rem',
+				'47/100': '47%',
+				'27/100': '27%',
+				'63/100': '63%',
+				'51/100': '51%',
+				'49/100': '49%',
+				'37': '9.25rem',
+				'65.6': '16.4rem',
+				'68/100': '68%',
+				'32/100': '32%',
+				'67.6': '16.9rem'
+			},
+			maxWidth: {
+				'140': '35rem',
+			},
+			backgroundImage: {
+				'split-gray-green': 'linear-gradient(to right, #1C355326 70% , #2CBC87 30%);',
+				'section1-img': 'url(\'/assets/section1-img.png\')',
+				'section3-img-1': 'url(\'/assets/section3-img-1.png\')',
+				'section3-img-2': 'url(\'/assets/section3-img-2.png\')',
+				'section3-img-3': 'url(\'/assets/section3-img-3.png\')',
+				'section6-img': 'url(\'/assets/section6-img.png\')',
+				'linkedin': 'url(\'/assets/linkedin.png\')',
+				'facebook': 'url(\'/assets/facebook.png\')',
+				'git-branch': 'url(\'/assets/git-branch.png\')'
+			},
+			padding: {
+				'1/10': '10%',
+				'21.8': '5.45rem',
+				'14.6': '3.65rem'
+			},
+			margin: {
+				'6.5': '1.625rem',
+				'4.5': '1.125rem',
+				'28.4': '7.1rem',
+				'12.8': '3.2rem',
+				'62.4': '15.6rem',
+				'25.6': '6.4rem',
+				'10.8': '2.7rem',
+			},
+			fontSize: {
+				'xsm': '0.8rem',
+				'2.5xl': '1.6rem',
+				'4.5xl': '2.4rem',
+				'4.75xl': '2.7rem',
+				'7.5xl': '5rem',
+				'xxs': '0.6rem',
+			},
+			lineHeight: {
+				'21.5': '5.375rem',
+				'17.2': '4.3rem',
+				'16': '4rem',
+				'12': '3rem',
+				'11': '2.75rem',
+				'13': '3.25rem',
+				'15': '3.75rem',
+			},
+			inset: {
+				'0.25': '0.0625rem'
+			},
+			backgroundSize: {
+				'full-auto': '100% auto'
+			},
+			borderWidth: {
+				'px': '1px',
+				'1.5': '1.5px'
+			}
+		},
+	},
+	plugins: [
+		require('@tailwindcss/forms'),
+	],
+};
