@@ -211,51 +211,53 @@ class ExampleComponent extends PureComponent<Props, State> {
             <>
                 {/* Building stellar websites */}
                 <div
-                    className='relative bg-split-gray-green px-32 pt-12 pb-24 2xl:px-40 2xl:pt-16 2xl:pb-32'
+                    className='relative bg-split-gray-green pt-12 pb-24 2xl:pt-16 2xl:pb-32'
                 >
-                    <div className='w-104 2xl:w-140'>
-                        <p
-                            className='text-green1 text-6xl leading-17.2 2xl:text-7.5xl 2xl:leading-21.5 font-medium mb-9 2xl:mb-12'
-                        >
-                            Building stellar websites for early startups
-                        </p>
-                        <p
-                            className='leading-7 mb-12 2xl:mb-16 text-gray3 text-sm 2xl:text-base'
-                        >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt.
-                        </p>
-                        <div className='flex'>
-                            <Link
-                                href=''
+                    <div className="container flex justify-between mx-auto">
+                        <div className='w-104 2xl:w-140'>
+                            <p
+                                className='text-green1 text-6xl leading-17.2 2xl:text-7.5xl 2xl:leading-21.5 font-medium mb-9 2xl:mb-12'
                             >
-                                <div
-                                    className='flex items-center justify-center bg-yellow1 text-black text-base h-12.8 w-46 cursor-pointer'
+                                Building stellar websites for early startups
+                            </p>
+                            <p
+                                className='leading-7 mb-12 2xl:mb-16 text-gray3 text-sm 2xl:text-base'
+                            >
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt.
+                            </p>
+                            <div className='flex'>
+                                <Link
+                                    href=''
                                 >
-                                    View our work
-                                </div>
-                            </Link>
-                            <Link
-                                href=''
-                            >
-                                <div className='flex items-center ml-10 cursor-pointer'>
-                                    <p
-                                        className='mr-5'
+                                    <div
+                                        className='flex items-center justify-center bg-yellow1 text-black text-base h-12.8 w-46 cursor-pointer'
                                     >
-                                        View Pricing
-                                    </p>
-                                    <Image
-                                        src='/assets/right-arrow.svg'
-                                        width="19"
-                                        height="9"
-                                        alt='right-arrow'
-                                    />
-                                </div>
-                            </Link>
+                                        View our work
+                                    </div>
+                                </Link>
+                                <Link
+                                    href=''
+                                >
+                                    <div className='flex items-center ml-10 cursor-pointer'>
+                                        <p
+                                            className='mr-5'
+                                        >
+                                            View Pricing
+                                        </p>
+                                        <Image
+                                            src='/assets/right-arrow.svg'
+                                            width="19"
+                                            height="9"
+                                            alt='right-arrow'
+                                        />
+                                    </div>
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div
-                        className='absolute top-12 right-28 2xl:top-16 2xl:right-36 w-133.8 h-99 2xl:w-167.25 2xl:h-123.75 bg-section1-img bg-cover'/>
+                        <div
+                            className='2xl:top-16 2xl:right-36 w-133.8 h-99 2xl:w-167.25 2xl:h-123.75 bg-section1-img bg-cover' />
+                   </div>
                 </div>
 
                 {/* How we work */}
