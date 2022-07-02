@@ -1,4 +1,4 @@
-# PAT Frontend Next Starter Project
+# GBN CREATIVE
 
 ## Prerequisites
 - Node.js (v16.13.1)
