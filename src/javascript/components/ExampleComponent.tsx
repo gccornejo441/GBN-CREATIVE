@@ -261,112 +261,114 @@ class ExampleComponent extends PureComponent<Props, State> {
                 </div>
 
                 {/* How we work */}
-                <div className='flex bg-gray2 px-32 py-24'>
-                    <div
-                        className='w-81 mr-28.4'
-                    >
-                        <p
-                            className='text-green1 text-4.5xl 2xl:text-5xl w-full leading-12 pb-3 2xl:pb-4'
+                <div className='flex justify-center bg-gray py-24 border-2 border-blue-500'>
+                    <div className="container flex justify-between">
+                        <div
+                            className='w-81 mr-28.4 border-2 border-black'
                         >
-                            How we work
-                        </p>
-                        <p
-                            className='text-sm w-full text-gray3 leading-7 pb-4'
-                        >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                        </p>
-                        <Link
-                            href='/contact-us'
-                        >
-                            <div
-                                className='flex items-center cursor-pointer'
+                            <p
+                                className='text-green1 text-4.5xl 2xl:text-5xl w-full leading-12 pb-3 2xl:pb-4'
                             >
-                                <p
-                                    className='text-lg text-green1 leading-7 mr-5'
+                                How we work
+                            </p>
+                            <p
+                                className='text-sm w-full text-gray3 leading-7 pb-4'
+                            >
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                            </p>
+                            <Link
+                                href='/contact-us'
+                            >
+                                <div
+                                    className='flex items-center cursor-pointer'
                                 >
-                                    Get in touch with us
-                                </p>
+                                    <p
+                                        className='text-lg text-green1 leading-7 mr-5'
+                                    >
+                                        Get in touch with us
+                                    </p>
+                                    <Image
+                                        src='/assets/right-arrow.svg'
+                                        width="19"
+                                        height="9"
+                                        alt='right-arrow'
+                                    />
+                                </div>
+                            </Link>
+                        </div>
+                        <div className="grid grid-cols-2 grid-rows-2 gap-7 pr-20 grow border-2 border-red-600">
+                            <div>
                                 <Image
-                                    src='/assets/right-arrow.svg'
-                                    width="19"
-                                    height="9"
-                                    alt='right-arrow'
+                                    src='/assets/s2-gy-1.png'
+                                    width="40"
+                                    height="40"
+                                    alt='s2-gy-1'
                                 />
+                                <p
+                                    className='text-2xl mt-3 leading-10 pb-2'
+                                >
+                                    Strategy
+                                </p>
+                                <p
+                                    className='text-sm	text-gray3 mt-4 leading-6 pb-2'
+                                >
+                                    Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
+                                </p>
                             </div>
-                        </Link>
-                    </div>
-                    <div className="grid grid-cols-2 grid-rows-2 gap-7 pr-20 grow">
-                        <div>
-                            <Image
-                                src='/assets/s2-gy-1.png'
-                                width="40"
-                                height="40"
-                                alt='s2-gy-1'
-                            />
-                            <p
-                                className='text-2xl mt-3 leading-10 pb-2'
-                            >
-                                Strategy
-                            </p>
-                            <p
-                                className='text-sm	text-gray3 mt-4 leading-6 pb-2'
-                            >
-                                Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
-                            </p>
-                        </div>
-                        <div>
-                            <Image
-                                src='/assets/s2-gy-2.png'
-                                width="40"
-                                height="40"
-                                alt='s2-gy-2'
-                            />
-                            <p
-                                className='text-2xl mt-3 leading-10 pb-2'
-                            >
-                                Wireframing
-                            </p>
-                            <p
-                                className='text-sm	text-gray3 mt-4 leading-6 pb-2'
-                            >
-                                Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
-                            </p>
-                        </div>
-                        <div>
-                            <Image
-                                src='/assets/s2-gy-3.png'
-                                width="40"
-                                height="40"
-                                alt='s2-gy-3'
-                            />
-                            <p
-                                className='text-2xl mt-3 leading-10 pb-2'
-                            >
-                                Design
-                            </p>
-                            <p
-                                className='text-sm	text-gray3 mt-4 leading-6 pb-2'
-                            >
-                                Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
-                            </p>
-                        </div>
-                        <div>
-                            <Image
-                                src='/assets/s2-gy-4.png'
-                                width="40"
-                                height="40"
-                                alt='s2-gy-4'
-                            />
-                            <p
-                                className='text-2xl mt-3 leading-10 pb-2'
-                            >
-                                Development
-                            </p>
-                            <p
-                                className='text-sm	text-gray3 mt-4 leading-6 pb-2'
-                            >
-                                Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
-                            </p>
+                            <div>
+                                <Image
+                                    src='/assets/s2-gy-2.png'
+                                    width="40"
+                                    height="40"
+                                    alt='s2-gy-2'
+                                />
+                                <p
+                                    className='text-2xl mt-3 leading-10 pb-2'
+                                >
+                                    Wireframing
+                                </p>
+                                <p
+                                    className='text-sm	text-gray3 mt-4 leading-6 pb-2'
+                                >
+                                    Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
+                                </p>
+                            </div>
+                            <div>
+                                <Image
+                                    src='/assets/s2-gy-3.png'
+                                    width="40"
+                                    height="40"
+                                    alt='s2-gy-3'
+                                />
+                                <p
+                                    className='text-2xl mt-3 leading-10 pb-2'
+                                >
+                                    Design
+                                </p>
+                                <p
+                                    className='text-sm	text-gray3 mt-4 leading-6 pb-2'
+                                >
+                                    Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
+                                </p>
+                            </div>
+                            <div>
+                                <Image
+                                    src='/assets/s2-gy-4.png'
+                                    width="40"
+                                    height="40"
+                                    alt='s2-gy-4'
+                                />
+                                <p
+                                    className='text-2xl mt-3 leading-10 pb-2'
+                                >
+                                    Development
+                                </p>
+                                <p
+                                    className='text-sm	text-gray3 mt-4 leading-6 pb-2'
+                                >
+                                    Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
