@@ -213,7 +213,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                 <div
                     className='relative bg-split-gray-green pt-12 pb-24 2xl:pt-16 2xl:pb-32'
                 >
-                    <div className="container flex justify-between mx-auto">
+                    <div className="flex container justify-between mx-auto px-4">
                         <div className='w-104 2xl:w-140'>
                             <p
                                 className='text-green1 text-6xl leading-17.2 2xl:text-7.5xl 2xl:leading-21.5 font-medium mb-9 2xl:mb-12'
@@ -264,7 +264,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                 <div className='flex justify-center bg-gray py-24 border-2 border-blue-500'>
                     <div className="container flex justify-between">
                         <div
-                            className='w-81 mr-28.4 border-2 border-black'
+                            className='w-81 mr-28.4'
                         >
                             <p
                                 className='text-green1 text-4.5xl 2xl:text-5xl w-full leading-12 pb-3 2xl:pb-4'
