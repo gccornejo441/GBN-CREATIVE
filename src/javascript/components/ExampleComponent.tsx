@@ -211,17 +211,17 @@ class ExampleComponent extends PureComponent<Props, State> {
             <>
                 {/* Building stellar websites */}
                 <div
-                    className='relative bg-split-gray-green pt-12 pb-24 2xl:pt-16 2xl:pb-32'
+                    className='relative md:bg-split-gray-green pt-12 pb-24 2xl:pt-16 2xl:pb-32'
                 >
-                    <div className="flex container justify-between mx-auto px-4">
-                        <div className='w-104 2xl:w-140'>
+                    <div className="grid md:grid-cols-2 gap-20 max-w-full lg:max-w-fit lg:mx-auto px-4">
+                        <div className='text-center md:text-left md:w-104 2xl:w-140'>
                             <p
-                                className='text-green1 text-6xl leading-17.2 2xl:text-7.5xl 2xl:leading-21.5 font-medium mb-9 2xl:mb-12'
+                                className='text-green1 text-6xl leading-17.2 2xl:text-7.5xl 2xl:leading-21.5 font-medium mb-5 lg:mb-9 2xl:mb-12'
                             >
                                 Building stellar websites for early startups
                             </p>
                             <p
-                                className='leading-7 mb-12 2xl:mb-16 text-gray3 text-sm 2xl:text-base'
+                                className='leading-7 mb-5 lg:mb-12 2xl:mb-16 text-gray3 text-2xl md:text-lg 2xl:text-base'
                             >
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt.
