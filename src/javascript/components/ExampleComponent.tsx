@@ -211,22 +211,22 @@ class ExampleComponent extends PureComponent<Props, State> {
             <>
                 {/* Building stellar websites */}
                 <div
-                    className='relative md:bg-split-gray-green pt-12 pb-24 2xl:pt-16 2xl:pb-32'
+                    className='relative md:bg-split-gray-green pt-12 md:pb-24 2xl:pt-16 2xl:pb-32'
                 >
-                    <div className="grid md:grid-cols-2 gap-20 max-w-full lg:max-w-fit lg:mx-auto px-4">
+                    <div className="md:grid md:grid-cols-2 gap-20 max-w-full lg:max-w-fit lg:mx-auto px-4">
                         <div className='text-center md:text-left md:w-104 2xl:w-140'>
                             <p
-                                className='text-green1 text-6xl leading-17.2 2xl:text-7.5xl 2xl:leading-21.5 font-medium mb-5 lg:mb-9 2xl:mb-12'
+                                className='text-green1 text-left text-6xl leading-17.2 2xl:text-7.5xl 2xl:leading-21.5 font-medium mb-5 lg:mb-9 2xl:mb-12'
                             >
                                 Building stellar websites for early startups
                             </p>
                             <p
-                                className='leading-7 mb-5 lg:mb-12 2xl:mb-16 text-gray3 text-2xl md:text-lg 2xl:text-base'
+                                className='leading-7 text-left mb-5 lg:mb-12 2xl:mb-16 text-gray3 text-2xl md:text-lg 2xl:text-base'
                             >
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt.
                             </p>
-                            <div className='flex'>
+                            <div className='flex justify-center'>
                                 <Link
                                     href=''
                                 >
@@ -256,23 +256,23 @@ class ExampleComponent extends PureComponent<Props, State> {
                             </div>
                         </div>
                         <div
-                            className='2xl:top-16 2xl:right-36 w-133.8 h-99 2xl:w-167.25 2xl:h-123.75 bg-section1-img bg-cover' />
+                            className='mt-16 2xl:top-16 2xl:right-36 w-133.8 h-99 2xl:w-167.25 2xl:h-123.75 bg-section1-img bg-cover' />
                    </div>
                 </div>
 
                 {/* How we work */}
-                <div className='flex justify-center bg-gray py-24 border-2 border-blue-500'>
-                    <div className="container flex justify-between">
+                <div className='bg-gray py-12 md:py-24'>
+                    <div className="container grid md:grid-cols-2 mx-auto px-4">
                         <div
-                            className='w-81 mr-28.4'
+                            className='w-full lg:w-full lg:mr-28.4 text-center md:text-left'
                         >
                             <p
-                                className='text-green1 text-4.5xl 2xl:text-5xl w-full leading-12 pb-3 2xl:pb-4'
+                                className='text-green1 text-4xl lg:text-4.5xl 2xl:text-7xl w-full leading-12 pb-3 2xl:pb-4'
                             >
                                 How we work
                             </p>
                             <p
-                                className='text-sm w-full text-gray3 leading-7 pb-4'
+                                className='text-lg md:text-md w-full text-gray3 leading-7 pb-4'
                             >
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                             </p>
@@ -296,7 +296,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                                 </div>
                             </Link>
                         </div>
-                        <div className="grid grid-cols-2 grid-rows-2 gap-7 pr-20 grow border-2 border-red-600">
+                        <div className="grid md:grid-cols-2 grid-rows-2 gap-7 grow">
                             <div>
                                 <Image
                                     src='/assets/s2-gy-1.png'
