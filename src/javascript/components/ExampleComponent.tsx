@@ -264,7 +264,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                 <div className='bg-gray py-12 md:py-24'>
                     <div className="container grid md:grid-cols-2 mx-auto px-4">
                         <div
-                            className='w-full lg:w-full lg:mr-28.4 text-center md:text-left'
+                            className='w-full lg:w-full lg:mr-28.4 text-center md:text-left border-2 border-black'
                         >
                             <p
                                 className='text-green1 text-4xl lg:text-4.5xl 2xl:text-7xl w-full leading-12 pb-3 2xl:pb-4'
@@ -296,8 +296,8 @@ class ExampleComponent extends PureComponent<Props, State> {
                                 </div>
                             </Link>
                         </div>
-                        <div className="grid md:grid-cols-2 grid-rows-2 gap-7 grow">
-                            <div>
+                        <div className="text-center md:text-left grid md:grid-cols-2 grid-rows-2 gap-7 grow">
+                            <div className="border-2 border-red-500">
                                 <Image
                                     src='/assets/s2-gy-1.png'
                                     width="40"
@@ -305,12 +305,12 @@ class ExampleComponent extends PureComponent<Props, State> {
                                     alt='s2-gy-1'
                                 />
                                 <p
-                                    className='text-2xl mt-3 leading-10 pb-2'
+                                    className='text-4xl md:text-2xl mt-3 leading-10 pb-2'
                                 >
                                     Strategy
                                 </p>
                                 <p
-                                    className='text-sm	text-gray3 mt-4 leading-6 pb-2'
+                                    className='md:text-sm text-2xl text-gray3 mt-4 leading-2 md:leading-6 pb-2'
                                 >
                                     Euismod faucibus turpis eu gravida mi. Pellentesque et velit aliquam .
                                 </p>
