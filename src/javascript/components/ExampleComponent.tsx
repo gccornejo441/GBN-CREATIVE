@@ -214,7 +214,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                     className='relative md:bg-split-gray-green pt-12 md:pb-24 2xl:pt-16 2xl:pb-32'
                 >
                     <div className="md:grid md:grid-cols-2 gap-20 max-w-full lg:max-w-fit lg:mx-auto px-4">
-                        <div className='text-center md:text-left md:w-104 2xl:w-140'>
+                        <div className='text-center md:text-left md:w-104 2xl:w-140 px-10 md:px-0'>
                             <p
                                 className='text-green1 text-left text-6xl leading-17.2 2xl:text-7.5xl 2xl:leading-21.5 font-medium mb-5 lg:mb-9 2xl:mb-12'
                             >
@@ -256,7 +256,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                             </div>
                         </div>
                         <div
-                            className='mt-16 2xl:top-16 2xl:right-36 w-133.8 h-99 2xl:w-167.25 2xl:h-123.75 bg-section1-img bg-cover' />
+                            className='mt-16 2xl:top-16 2xl:right-36 w-full h-99 2xl:w-167.25 2xl:h-123.75 bg-section1-img bg-cover' />
                    </div>
                 </div>
 
