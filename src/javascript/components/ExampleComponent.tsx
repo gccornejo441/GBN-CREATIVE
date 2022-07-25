@@ -726,10 +726,10 @@ class ExampleComponent extends PureComponent<Props, State> {
 
                 {/* Frequently asked questions */}
                 <div
-                    className='flex justify-between bg-white px-32 py-24'
+                    className='flex justify-between bg-white px-32 py-24 border-2 border-black'
                 >
                     <div
-                        className='flex min-w-full'
+                        className='flex flex-col md:flex-row  min-w-full'
                     >
                         <div
                             className='w-1/4'
