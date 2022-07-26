@@ -957,10 +957,10 @@ class ExampleComponent extends PureComponent<Props, State> {
 
                 {/* Footer */}
                 <div
-                    className='bg-green1 px-40 py-21.8 '
+                    className='bg-green1 md:px-40 py-21.8 '
                 >
                     <div
-                        className='flex justify-between px-14.6 pb-10 border-b-px border-white006 border-2 border-black'
+                        className='flex justify-between px-14.6 pb-10 border-b-px md:border-white006 border-2 border-black'
                     >
                         <div
                             className='w-68/100 grid grid-cols-3'
