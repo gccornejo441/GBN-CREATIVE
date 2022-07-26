@@ -493,7 +493,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                         Features
                     </p>
                     <p
-                        className='text-green1 text-center text-4.5xl leading-14 mb-2.5 w-126.2 mb-28'
+                        className='text-green1 md:text-center text-4.5xl leading-14 mb-2.5 md:w-126.2 mb-28 w-fit text-left'
                     >
                         Design that solves problems, one product at a time
                     </p>
@@ -726,13 +726,13 @@ class ExampleComponent extends PureComponent<Props, State> {
 
                 {/* Frequently asked questions */}
                 <div
-                    className='flex justify-between bg-white px-32 py-24 border-2 border-black'
+                    className='flex justify-between bg-white px-10 md:px-32 py-24 border-2 border-black w-fit'
                 >
                     <div
-                        className='flex flex-col md:flex-row  min-w-full'
+                        className='flex flex-col md:flex-row  md:min-w-full'
                     >
                         <div
-                            className='w-1/4'
+                            className='md:w-1/4'
                         >
                             <p
                                 className='text-3xl text-green1 leading-11 mb-3'
@@ -740,32 +740,34 @@ class ExampleComponent extends PureComponent<Props, State> {
                                 Frequently asked questions
                             </p>
                             <p
-                                className='text-sm text-gray5 leading-6 '
+                                className='text-lg md:text-sm text-gray5 leading-6 '
                             >
                                 Contact us for more info
                             </p>
                         </div>
                         <div
-                            className='ml-28 w-3/4 mt-2'
+                            className='md:ml-28 md:w-3/4 mt-10 md:mt-2 w-[100vw]'
                         >
                             {questions.map((question, index) => (
                                 <div
                                     key={question.id}
-                                    className=''
+                                    className='md:w-full'
                                 >
                                     <div
-                                        className={`flex items-center grid grid-container grid-cols-10 gap-x-12 ${index < questionsLength - 1 ? 'border-b-2' : ''} ${index === 0 ? 'pb-6' : 'py-6'}`}
+                                        className={`items-center flex justify-between md:grid md:grid-container md:grid-cols-10 md:gap-x-12 ${index < questionsLength - 1 ? 'border-b-2' : ''} ${index === 0 ? 'pb-6' : 'py-6'}`}
                                     >
-                                        <p
-                                            className='col-span-1 text-xl text-green1 leading-7'
-                                        >
-                                            {index < 9 ? `0${index + 1}` : index + 1}
-                                        </p>
-                                        <p
-                                            className='col-span-8 text-xl text-green1 leading-7'
-                                        >
-                                            {question.question}
-                                        </p>
+                                        <div className="flex">
+                                            <p
+                                                className='md:col-span-1 text-xl text-green1 leading-7 w-fit mr-5'
+                                            >
+                                                {index < 9 ? `0${index + 1}` : index + 1}
+                                            </p>
+                                            <p
+                                                className='md:col-span-8 text-xl text-green1 leading-7'
+                                            >
+                                                {question.question}
+                                            </p>
+                                        </div>
                                         <div
                                             className={`col-span-1`}
                                             onClick={this._toggleQuestionAnswer(question)}
@@ -958,7 +960,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                     className='bg-green1 px-40 py-21.8 '
                 >
                     <div
-                        className='flex justify-between px-14.6 pb-10 border-b-px border-white006'
+                        className='flex justify-between px-14.6 pb-10 border-b-px border-white006 border-2 border-black'
                     >
                         <div
                             className='w-68/100 grid grid-cols-3'
