@@ -835,7 +835,7 @@ class ExampleComponent extends PureComponent<Props, State> {
                             className='w-49/100 pt-20 px-20'
                         >
                             <p
-                                className='text-2.5xl text-white leading-10 mb-4 leading-5'
+                                className='text-2.5xl text-white md:leading-10 mb-4 leading-5'
                             >
                                 Send inquiry
                             </p>
