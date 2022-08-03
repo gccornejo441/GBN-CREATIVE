@@ -1,69 +1,115 @@
-import Script from "next/script";
-import { useEffect } from "react";
-declare global {
-    interface Window {
-        initMap: () => void;
-    }
-}
 
-const About = () => {
-
-        // const handleScriptLoad = () => {
-            // let uluru = {
-            //     lat: -25.344,
-            //     lan: 131.036
-            // }
-            // // Creates new object
-            // let map = new google.maps.Map(
-            //     document.getElementById('map') as HTMLElement, { zoom: 4, center: uluru } 
-            // );
-    
-            // let marker = new google.maps.Marker({
-            //     position: uluru, map: map
-            // })
+import React, { useEffect, useRef, ReactElement } from "react";
+import ReactDOM from "react-dom";
 
 
-    function initMap(): void {
-        new google.maps.Map(
-            document.getElementById("map") as HTMLElement,
-            {
-                mapId: "8e0a97af9386fef",
-                center: { lat: 48.85, lng: 2.35 },
-                zoom: 12,
-            } as google.maps.MapOptions
-        );
-    }
+import { Wrapper } from "@googlemaps/react-wrapper";
 
 
+const markers = [
+    { lat: -25.363, lng: 131.044 },
+    { lat: -15.363, lng: 122.044 }
+];
+
+const Map = ({ onClick, onIdle, children, style, ...options }) => {
+    const ref = React.useRef(null);
+    const [map, setMap] = React.useState();
+
+    React.useEffect(() => {
+        if (ref.current && !map) {
+            setMap(new window.google.maps.Map(ref.current, {}));
+        }
+    }, [ref, map]);
+
+    React.useEffect(() => {
+        if (map) {
+            map.setOptions(options);
+        }
+    }, [map, options]);
+
+    React.useEffect(() => {
+        if (map) {
+            ["click", "idle"].forEach((eventName) =>
+                window.google.maps.event.clearListeners(map, eventName)
+            );
+
+            if (onClick) {
+                map.addListener("click", onClick);
+            }
+
+            if (onIdle) {
+                map.addListener("idle", () => onIdle(map));
+            }
+        }
+    }, [map, onClick, onIdle]);
 
     return (
-        <div>
-            <h1>Hello, world!</h1>
-            <div className="border-2 border-black">
-                <div className="border-2 border-red-500 w-1/2 mx-auto">
-                    <div id="map" className="h-[100vh]"></div>
-                    {/* <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaVA7zFT3nG2pu7OquxpkbsIss4egaENs&callback=initMap" /> */}
-                    {/* <script type="text/javascript" src="/js/googlescript.js" />
-                    <Script
-                        id="google-maps"
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaVA7zFT3nG2pu7OquxpkbsIss4egaENs"
-                        onReady={() => {
-                            new google.maps.Map(ref.current, {
-                                center: { lat: -34.397, lng: 150.644 },
-                                zoom: 8,
-                            })
-                        }}
-                    /> */}
-                    <script type="module" src="./js/index.ts"></script>
-                    <script
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaVA7zFT3nG2pu7OquxpkbsIss4egaENs&callback=initMap&v=weekly"
-                        defer
-                    ></script>
-                </div>
-            </div>
+        <>
+            <div ref={ref} style={style} />
+            {React.Children.map(children, (child) => {
+                if (React.isValidElement(child)) {
+                    return React.cloneElement(child, { map });
+                }
+            })}
+        </>
+    );
+};
+
+const Marker = (options) => {
+    const [marker, setMarker] = React.useState();
+    const contentRef = React.useRef(null);
+
+    React.useEffect(() => {
+        if (!marker) {
+            setMarker(new window.google.maps.Marker());
+        }
+
+        return () => {
+            if (marker) {
+                marker.setMap(null);
+            }
+        };
+    }, [marker]);
+
+    React.useEffect(() => {
+        if (marker) {
+            const infowindow = new window.google.maps.InfoWindow({
+                content: `daver`
+            });
+            marker.setOptions(options);
+
+            marker.addListener("click", () => {
+                infowindow.open({
+                    anchor: marker,
+                    shouldFocus: false
+                });
+            });
+        }
+    }, [marker, options]);
+
+    return null;
+};
+
+
+const About = () => {
+    const center = { lat: -34.397, lng: 150.644 };
+    const zoom = 4;
+
+    return (
+        <div className="h-[100vh] border-2 border-black">
+            <Wrapper apiKey="AIzaSyAaVA7zFT3nG2pu7OquxpkbsIss4egaENs" >
+                <Map
+                    center={{ lat: -25.363, lng: 131.044 }}
+                    zoom={3}
+                    style={{ flexGrow: "1", height: "100%" }}
+                >
+                    {markers.map((marker) => {
+                        return <Marker position={marker} />;
+                    })}
+                </Map>
+            </Wrapper>
         </div>
     );
 }
-
 
 export default About;
