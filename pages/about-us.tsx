@@ -74,7 +74,7 @@ const Marker = (options) => {
     React.useEffect(() => {
         if (marker) {
             const infowindow = new window.google.maps.InfoWindow({
-                content: `daver`
+                content: `mONEY`
             });
             marker.setOptions(options);
 
@@ -97,7 +97,7 @@ const About = () => {
 
     return (
         <div className="h-[100vh] border-2 border-black">
-            <Wrapper apiKey="AIzaSyAaVA7zFT3nG2pu7OquxpkbsIss4egaENs" >
+            <Wrapper apiKey={process.env.GOOGLEAPI} >
                 <Map
                     center={{ lat: -25.363, lng: 131.044 }}
                     zoom={3}
