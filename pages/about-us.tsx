@@ -232,7 +232,7 @@ const About = () => {
 
     return (
         <div className="h-[100vh]">
-            <Wrapper apiKey={process.env.GOOGLEAPI} render={render}>
+            <Wrapper apiKey={'AIzaSyC3VCDaWLypkC2vOX_P4J4v-IvhuxadC2k'} render={render}>
                 <Map 
                 center={center} 
                 zoom={zoom}
@@ -241,7 +241,7 @@ const About = () => {
                     style={{ flexGrow: "1", height: "100%" }}
                 >
                     {clicks.map((latLng, i) => (
-                        <Marker key={i} position={latLng} />
+                        <Marker key={i} position={latLng}/>
                     ))}
                 </Map>
             </Wrapper>
@@ -266,6 +266,7 @@ const Map = ({
     style,
     ...options
 }: MapProps) => {
+
     const ref = React.useRef<HTMLDivElement>(null);
     const [map, setMap] = React.useState<google.maps.Map>();
 
@@ -298,6 +299,27 @@ const Map = ({
             }
         }
     }, [map, onClick, onIdle]);
+
+
+    React.useEffect(() => {
+        if (map) {
+            const polyline = new window.google.maps.Polyline({
+                path: [
+                    new google.maps.LatLng(28.613939, 77.209021),
+                    new google.maps.LatLng(51.507351, -0.127758),
+                    new google.maps.LatLng(40.712784, -74.005941),
+                    new google.maps.LatLng(28.213545, 94.868713) 
+                ],
+
+                strokeColor: "#000FFF",
+                strokeOpacity: 0.6,
+                strokeWeight: 2
+            })
+
+            polyline.setMap(map)
+        }
+
+    }, [map, options])
 
     return (
         <>
@@ -341,7 +363,9 @@ const Marker: React.FC<google.maps.MarkerOptions> = (options) => {
             marker.getPosition()
         }
     }, [marker])
+
    const bubble = '<div style="width:125px; height:auto; overflow:hidden !important;">'  + " to<br /> " + "</div> ";
+
     React.useEffect(() => {
         if (marker) {
             const infowindow = new window.google.maps.InfoWindow({
