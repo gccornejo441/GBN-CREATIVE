@@ -1,1 +1,115 @@
 ["[1660007456,39.75,-121.84,\"Chico,CA\",39.78,-121.86,\"Chico,CA\",\"9uz4s4wblu\"]","[1660007487,41.65,-70.3,\"Hyannis,MA\",41.66,-70.24,\"West Yarmouth,MA\",\"arz46nXsic\"]","[1660007489,55.66,-132.52,\"Thorne Bay,AK\",30.31,-90.95,\"Prairieville,LA\",\"muz4D6Gj8u\"]","[1660007508,39.82,-75.13,\"Woodbury,NJ\",34.55,-77.94,\"Burgaw,NC\",\"5rziAq5kdu\"]","[1660007517,43.64,-116.4,\"Meridian,ID\",40.76,-111.9,\"Salt Lake City,UT\",\"LZz9RLWzHr\"]","[1660007537,40.02,-83.15,\"Hilliard,OH\",40.07,-82.41,\"Newark,OH\",\"iPz4IPhFau\"]","[1660007567,36.33,-119.64,\"Hanford,CA\",36.21,-115.23,\"Las Vegas,NV\",\"sbtkZi6Zc\"]","[1660007578,40.42,-104.71,\"Greeley,CO\",39.8,-89.65,\"Springfield,IL\",\"Fbz4Noqo7c\"]","[1660007746,44.06,-70.72,\"Bridgton,ME\",43.8,-70.41,\"Windham,ME\",\"nbz4lRrXQb\"]","[1660007793,42.95,-83.82,\"Swartz Creek,MI\",43.41,-84.33,\"Merrill,MI\",\"SSz4T2ClzZ\"]","[1660007795,48.21,-114.3,\"Kalispell,MT\",39.44,-76.64,\"Lutherville-Timonium,MD\",\"Vvzi56SS0k\"]","[1660007828,42.81,-85.56,\"Caledonia,MI\",44.29,-84.22,\"West Branch,MI\",\"ekz9FIUOWc\"]","[1660007919,41.51,-71.6,\"West Kingston,RI\",42.35,-71.21,\"Newtonville,MA\",\"5rziXs30db\"]","[1660007930,39.32,-79.55,\"Aurora,WV\",42.97,-71.44,\"Manchester,NH\",\"XZ1GMmeMv\"]","[1660007977,48.41,-114.35,\"Whitefish,MT\",44.94,-93.25,\"Minneapolis,MN\",\"rJz4ZkvTob\"]","[1660008036,28.69,-81.27,\"Winter Springs,FL\",43.18,-73.05,\"Manchester Center,VT\",\"UZzK7uwKwZ\"]","[1660008066,39.51,-84.61,\"Collinsville,OH\",39.41,-84.62,\"Hamilton,OH\",\"EJzfjUNlbZ\"]","[1660008176,38.43,-91,\"Union,MO\",35.78,-83.54,\"Pigeon Forge,TN\",\"RvvapsB1P\"]","[1660008316,41.26,-110.96,\"Evanston,WY\",40.85,-74.28,\"Caldwell,NJ\",\"nczK6R8gQu\"]","[1660008424,46.87,-68.02,\"Caribou,ME\",44.08,-69.74,\"Dresden,ME\",\"IbzRmznTkS\"]","[1660008428,40.88,-73.01,\"Coram,NY\",43.09,-79.04,\"Niagara Falls,NY\",\"CuzfIApSBv\"]","[1660008434,45.78,-108.58,\"Billings,MT\",43.58,-116.59,\"Nampa,ID\",\"vSzmyeTN3P\"]","[1660008440,47.48,-121.76,\"North Bend,WA\",47.7,-122.72,\"Silverdale,WA\",\"YPzmSU9gDu\"]","[1660008450,40.79,-89.43,\"Metamora,IL\",40.51,-89.48,\"Tremont,IL\",\"ccz4nzvOjP\"]","[1660008551,39.46,-76.81,\"Reisterstown,MD\",39.35,-76.63,\"Baltimore,MD\",\"ybzmZBewhJ\"]","[1660008566,38.54,-91.02,\"Washington,MO\",29.86,-97.94,\"San Marcos,TX\",\"aSzKAZn9iZ\"]","[1660008583,39.13,-76.69,\"Severn,MD\",39.37,-76.68,\"Baltimore,MD\",\"bPz46d0NEr\"]","[1660008643,38.15,-120.85,\"Valley Springs,CA\",38.03,-121.26,\"Stockton,CA\",\"auz4v08aiZ\"]","[1660008648,44.92,-93.41,\"Hopkins,MN\",46.58,-91.93,\"South Range,WI\",\"WZzKej0ser\"]","[1660008658,34.23,-86.76,\"Cullman,AL\",34.17,-86.82,\"Cullman,AL\",\"Bbz4l8fxCZ\"]","[1660008658,27.94,-82.24,\"Valrico,FL\",28.95,-81.3,\"Orange City,FL\",\"qbzmycSWtJ\"]","[1660008707,44.11,-69.11,\"Rockland,ME\",44.11,-69.11,\"Rockland,ME\",\"qZzKrLS9tS\"]","[1660008753,33.82,-117.2,\"Perris,CA\",38.52,-90.3,\"Saint Louis,MO\",\"LrzKHCqhHP\"]","[1660008775,41.85,-83.45,\"La Salle,MI\",42.42,-82.9,\"Grosse Pointe,MI\",\"EbzKSxxSbZ\"]","[1660008812,38.5,-89.98,\"Belleville,IL\",38.72,-90.44,\"Maryland Heights,MO\",\"lrz4b1Xa9u\"]","[1660008866,34.71,-82.29,\"Simpsonville,SC\",29.68,-97.65,\"Luling,TX\",\"aSz9YHV6ic\"]","[1660008867,42.95,-78.86,\"Buffalo,NY\",42.91,-74.57,\"Palatine Bridge,NY\",\"1Pz4elDsRc\"]","[1660008876,42.02,-71.22,\"Mansfield,MA\",42.39,-71.09,\"Somerville,MA\",\"USz4l7hlwS\"]","[1660008905,40.98,-76.62,\"Danville,PA\",29.88,-95.52,\"Houston,TX\",\"dSzm03C25k\"]","[1660008906,40.64,-73.67,\"East Rockaway,NY\",40.62,-73.72,\"Cedarhurst,NY\",\"srziUTUqZc\"]","[1660008914,44.8,-91.44,\"Altoona,WI\",43.8,-91.22,\"La Crosse,WI\",\"Mrz4LU3TXZ\"]","[1660008915,46.86,-96.9,\"West Fargo,ND\",46.58,-91.93,\"South Range,WI\",\"evzKPUooWv\"]","[1660009064,38.8,-94.46,\"Raymore,MO\",38.97,-94.58,\"Kansas City,MO\",\"Lvz4FfEBHu\"]","[1660009078,40.64,-73.67,\"East Rockaway,NY\",40.71,-73.56,\"East Meadow,NY\",\"OPz4kjPjJb\"]","[1660009167,38.56,-121.55,\"West Sacramento,CA\",38.56,-121.55,\"West Sacramento,CA\",\"zJzfjdY5SJ\"]","[1660009238,38.78,-90.62,\"Saint Peters,MO\",40.47,-88.37,\"Gibson City,IL\",\"Ruz4eska1P\"]","[1660009241,40.22,-74.83,\"Morrisville,PA\",40.28,-74.72,\"Lawrence Township,NJ\",\"EczKqUicbb\"]","[1660009249,42.98,-83.69,\"Flint,MI\",43.69,-82.95,\"Ubly,MI\",\"kZz2FKe8IJ\"]","[1660009269,42.34,-122.83,\"Medford,OR\",45.54,-122.95,\"Hillsboro,OR\",\"frzKs1OtgZ\"]","[1660009306,34.04,-94.34,\"De Queen,AR\",41.44,-81.85,\"Cleveland,OH\",\"hrzKx8zOyv\"]","[1660009380,41.76,-88.01,\"Downers Grove,IL\",41.81,-88.02,\"Downers Grove,IL\",\"rvz4cN3doZ\"]","[1660009466,46.15,-122.97,\"Longview,WA\",35.25,-106.68,\"Rio Rancho,NM\",\"CSz4YkrWBc\"]","[1660009519,43.02,-88.02,\"Milwaukee,WI\",44.21,-88.42,\"Menasha,WI\",\"GJz4YIsFPZ\"]","[1660009544,35.82,-77.25,\"Robersonville,NC\",41.44,-74.02,\"Cornwall-on-Hudson,NY\",\"JZxFSBaOJ\"]","[1660009555,38.31,-85.72,\"Jeffersonville,IN\",38.3,-85.96,\"Georgetown,IN\",\"fcz4uvV6gS\"]","[1660009598,36.25,-94.12,\"Lowell,AR\",36.3,-94.15,\"Rogers,AR\",\"svz46a4vZJ\"]","[1660009603,38.68,-75.38,\"Georgetown,DE\",40.99,-73.8,\"Scarsdale,NY\",\"hcz4rZZlyr\"]","[1660009667,40.58,-105.11,\"Fort Collins,CO\",47.27,-122.25,\"Pacific,WA\",\"okzi2cY1rJ\"]","[1660009670,34.48,-118.47,\"Santa Clarita,CA\",34.44,-118.51,\"Santa Clarita,CA\",\"Lvz4bTioHr\"]","[1660009700,28.98,-98.48,\"Pleasanton,TX\",29.33,-98.12,\"La Vernia,TX\",\"Icz4FwJqkv\"]","[1660009713,44.56,-88.1,\"Green Bay,WI\",44.49,-87.93,\"Green Bay,WI\",\"wvzKeiYqUP\"]","[1660009753,45.31,-122.97,\"Newberg,OR\",45.44,-122.78,\"Portland,OR\",\"JczmCjKgOu\"]","[1660009810,38.16,-85.78,\"Louisville,KY\",38.1,-85.86,\"Louisville,KY\",\"Avz4wiz5ur\"]","[1660009822,36.24,-93.11,\"Harrison,AR\",36.24,-93.11,\"Harrison,AR\",\"xcz4a6GoKu\"]","[1660009919,39.83,-84.89,\"Richmond,IN\",37.91,-85.29,\"Bloomfield,KY\",\"euz4gY9MWr\"]","[1660009983,39.81,-75.15,\"Woodbury Heights,NJ\",40,-74.99,\"Riverton,NJ\",\"mSz4QRAP8c\"]","[1660009994,42.57,-83.07,\"Sterling Heights,MI\",42.46,-82.9,\"Saint Clair Shores,MI\",\"dSz4roEq5k\"]","[1660010066,27.29,-81.37,\"Lake Placid,FL\",27.5,-81.45,\"Sebring,FL\",\"Ubz4hwKHwS\"]","[1660010101,37.38,-5.99,\"Sevilla,51\",40.44,-75.82,\"Fleetwood,PA\",\"Zuzm9Ixjsu\"]","[1660010120,41.3,-72.94,\"New Haven,CT\",42.32,-73.37,\"West Stockbridge,MA\",\"kczmCPKiIv\"]","[1660010150,47.85,-120.04,\"Chelan,WA\",42.02,-91.66,\"Cedar Rapids,IA\",\"QuzVQNnknJ\"]","[1660010155,45.67,-122.52,\"Vancouver,WA\",45.67,-122.52,\"Vancouver,WA\",\"uSzK1AuIAu\"]","[1660010181,47.1,-122.58,\"Tacoma,WA\",45.64,-122.62,\"Vancouver,WA\",\"fczRCoiKgv\"]","[1660010199,38.67,-121.15,\"Folsom,CA\",35.36,-94.36,\"Fort Smith,AR\",\"1ZziETk5Ru\"]","[1660010210,18.41,-65.98,\"Carolina,PR\",44.5,-73.18,\"Winooski,VT\",\"zPz9hhkbSr\"]","[1660010213,26.3,-80.27,\"Pompano Beach,FL\",26.18,-80.27,\"Fort Lauderdale,FL\",\"5Pz469pudk\"]","[1660010283,45.61,-122.42,\"Camas,WA\",45.67,-122.58,\"Vancouver,WA\",\"bkz4lcTQEb\"]","[1660010337,26.3,-80.27,\"Pompano Beach,FL\",26.18,-80.27,\"Fort Lauderdale,FL\",\"FJz4eFYZ7r\"]","[1660010343,40.27,-74.82,\"Trenton,NJ\",40.55,-75.64,\"Breinigsville,PA\",\"acz4ZbDUiu\"]","[1660010363,32.24,-110.92,\"Tucson,AZ\",33.3,-112.03,\"Phoenix,AZ\",\"yrzRb8YEhP\"]","[1660010365,42.8,-77.8,\"Geneseo,NY\",43.15,-77.59,\"Rochester,NY\",\"xPz4yZJpKr\"]","[1660010378,40.15,-75.28,\"Blue Bell,PA\",42.98,-78.73,\"Buffalo,NY\",\"prz9fSUZ4Z\"]","[1660010544,33.79,-109.99,\"Fort Apache,AZ\",35.18,-111.66,\"Flagstaff,AZ\",\"Icz90Z45ku\"]","[1660010618,43.44,-96.33,\"Lester,IA\",44.44,-73.1,\"Williston,VT\",\"tZz4uskKqS\"]","[1660010639,36.14,-115.28,\"Las Vegas,NV\",36.2,-115.26,\"Las Vegas,NV\",\"wcz9rb9ZUS\"]","[1660010709,39.81,-105.12,\"Arvada,CO\",36.07,-80.32,\"Winston-Salem,NC\",\"Vbz4qMdk0u\"]","[1660010765,36.26,-81.84,\"Sugar Grove,NC\",36.43,-81.27,\"Laurel Springs,NC\",\"mkz4evzc8P\"]","[1660010766,30.59,-87.31,\"Cantonment,FL\",39.71,-84.17,\"Dayton,OH\",\"rkboBVNoZ\"]","[1660010779,41.54,-72.17,\"Bozrah,CT\",42.29,-71.72,\"Shrewsbury,MA\",\"Rvz48Oem1v\"]","[1660010786,42.36,-87.86,\"Waukegan,IL\",43.8,-70.26,\"Cumberland Center,ME\",\"Luz4tC4qHk\"]","[1660010802,27.6,-99.49,\"Laredo,TX\",29.68,-97.65,\"Luling,TX\",\"5uz4vRr1dr\"]","[1660010828,45.07,-83.48,\"Alpena,MI\",43.51,-84.13,\"Freeland,MI\",\"5Pz4As6zdS\"]","[1660010886,41.52,-74.04,\"Newburgh,NY\",40.74,-74.23,\"Newark,NJ\",\"MbzKbJBFXZ\"]","[1660010941,39.28,-76.69,\"Baltimore,MD\",39.32,-76.72,\"Gwynn Oak,MD\",\"ckz7h9akjZ\"]","[1660010974,40.63,-74.4,\"Plainfield,NJ\",40.43,-74.41,\"East Brunswick,NJ\",\"aPz44xu9iJ\"]","[1660010983,42.12,-88.27,\"Carpentersville,IL\",42.22,-88.34,\"Crystal Lake,IL\",\"OJz4HGE1Jv\"]","[1660011003,45.04,-93.79,\"Delano,MN\",45.09,-93.74,\"Rockford,MN\",\"Tuz40EVcNZ\"]","[1660011013,40.21,-78.25,\"Saxton,PA\",40.79,-77.84,\"State College,PA\",\"quzKiOEktc\"]"]
+
+
+// $("#ticker-list").html(data);
+function map_tick(){
+	$.ajax({
+	  type: "GET",
+	  url: "hitfeed3.php",
+	  data: { ts: last_ts }
+	  }).done(function( msg ) {
+	  		mapcntr++;
+	  		if (mapcntr%3==0) stat=".";
+	  		if (mapcntr%3==1) stat="..";
+	  		if (mapcntr%3==2) stat="...";
+	  		//stat=stat+"("+mapcntr+")";
+		  	$("#runtick").html(stat);
+			clear_tags(0);
+			var obj = jQuery.parseJSON(msg);
+			$.each(obj, function(i, item) {
+				var ll = jQuery.parseJSON(item);
+				//alert(ll[5]+" "+ll[6]+" "+ll[7]);
+				billlink='';
+								bubble='<div style="width:125px; height:auto; overflow:hidden !important;">'+ll[6]+" to<br /> "+ll[3]+" "+billlink+"</div> ";
+				$("#wgmap").gmap3({
+					polyline:{
+						options:{
+            			strokeColor: "darkblue",
+			            strokeOpacity: 0.75,
+			            strokeWeight: 2,
+			            path: [[ll[4],ll[5]], [ll[1],ll[2]] ],
+			            tag: "line"
+						}
+					},
+					infowindow:	{
+							latLng:[ll[1]+.5,ll[2]],
+							options:{content: bubble
+								},
+							tag: ["info"]
+       				},
+       				marker:{ values:[
+ 						{
+ 						latLng:[ll[4]-.000012,ll[5]],
+						tag: ["start"],
+						options:{icon: "/images/start.png" }
+						},
+						{
+						latLng:[ll[1],ll[2]],
+						data: bubble,
+						tag: "green",
+						options:{icon: "https://maps.google.com/mapfiles/marker_green.png" },
+						events:{
+							mouseover: function(marker, event, context){
+								var map = $(this).gmap3("get"),
+								infowindow = $(this).gmap3({get:{name:"infowindow"}});
+								if (infowindow){
+									infowindow.open(map, marker);
+									infowindow.setContent(context.data);
+								} else {
+								$(this).gmap3({
+									infowindow:{
+										anchor:marker,
+										options:{content: context.data}
+									}
+								});
+								}
+							},
+							mouseout: function(){
+								//var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+								//if (infowindow){	infowindow.close();	}
+							}
+						}
+					}]}
+			    });
+				last_ts=ll[0];
+			});
+		});
+};
+
+function showhistory(view_ts){
+	clear_tags(1);
+	$.ajax({
+	  type: "GET",
+	  url: "hitfeed3.php",
+	  data: { ts: view_ts }
+	  }).done(function( msg ) {
+			clear_tags(0);
+			var obj = jQuery.parseJSON(msg);
+			$.each(obj, function(i, item) {
+				var ll = jQuery.parseJSON(item);
+				$("#wgmap").gmap3({
+					marker:{
+						latLng:[ll[1],ll[2]],
+						options:{icon: "https://maps.google.com/mapfiles/marker_purple.png" },
+					}
+			    });
+				if (view_ts=="hour" && hidepath==0) {
+   				$("#wgmap").gmap3({
+					polyline:{
+						options:{
+            			strokeColor: "darkblue",
+			            strokeOpacity: 1.0,
+			            strokeWeight: 2,
+			            path: [[ll[4],ll[5]], [ll[1],ll[2]] ],
+			            tag: "line"
+						}
+					}
+			    });
+				}
+				last_ts=ll[0];
+			});
+	});
+	map_tick();
+};
+
+

@@ -128,269 +128,277 @@ import * as React from 'react';
 
 // export default About;
 
-// import { createRoot } from "react-dom/client";
-// import { Wrapper, Status } from "@googlemaps/react-wrapper";
-// import { createCustomEqual } from "fast-equals";
-// import { isLatLngLiteral } from "@googlemaps/typescript-guards";
-
-
-// const About = () => {
-//     const [clicks, setClicks] = React.useState<google.maps.LatLng[]>([]);
-//     const [zoom, setZoom] = React.useState(3); // initial zoom
-//     const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
-//         lat: 0,
-//         lng: 0,    
-//     });
-
-//     const onClick = (e: google.maps.MapMouseEvent) => {
-//         // avoid directly mutating state
-//         setClicks([...clicks, e.latLng!]);
-//     };
-
-//     const onIdle = (m: google.maps.Map) => {
-//         console.log("onIdle");
-//         setZoom(m.getZoom()!);
-//         setCenter(m.getCenter()!.toJSON());
-//     };
-
-//     const render = (status: Status) => {
-//         return <h1>{status}</h1>;
-//     };
-
-//     const form = (
-//         <div
-//             style={{
-//                 padding: "1rem",
-//                 flexBasis: "250px",
-//                 height: "100%",
-//                 overflow: "auto",
-//             }}
-//         >
-//             <label htmlFor="zoom">Zoom</label>
-//             <input
-//                 type="number"
-//                 id="zoom"
-//                 name="zoom"
-//                 value={zoom}
-//                 onChange={(event) => setZoom(Number(event.target.value))}
-//             />
-//             <br />
-//             <label htmlFor="lat">Latitude</label>
-//             <input
-//                 type="number"
-//                 id="lat"
-//                 name="lat"
-//                 value={center.lat}
-//                 onChange={(event) =>
-//                     setCenter({ ...center, lat: Number(event.target.value) })
-//                 }
-//             />
-//             <br />
-//             <label htmlFor="lng">Longitude</label>
-//             <input
-//                 type="number"
-//                 id="lng"
-//                 name="lng"
-//                 value={center.lng}
-//                 onChange={(event) =>
-//                     setCenter({ ...center, lng: Number(event.target.value) })
-//                 }
-//             />
-//             <h3>{clicks.length === 0 ? "Click on map to add markers" : "Clicks"}</h3>
-//             {clicks.map((latLng, i) => (
-//                 <pre key={i}>{JSON.stringify(latLng.toJSON(), null, 2)}</pre>
-//             ))}
-//             <button onClick={() => setClicks([])}>Clear</button>
-//         </div>
-//     );
-
-//     return (
-//         <div className="h-[100vh]">
-//             <Wrapper apiKey={process.env.GOOGLEAPI} render={render}>
-//                 <Map 
-//                 center={center} 
-//                 zoom={zoom}
-//                 onClick={onClick}
-//                 onIdle={onIdle}
-//                     style={{ flexGrow: "1", height: "100%" }}
-//                 >
-//                     {clicks.map((latLng, i) => (
-//                         <Marker key={i} position={latLng} />
-//                     ))}
-//                 </Map>
-//             </Wrapper>
-//             {/* Basic form for controlling center and zoom of map. */}
-//             {form}
-//         </div>
-//     );
-// }
-
-
-// interface MapProps extends google.maps.MapOptions {
-//     style: { [key: string]: string };
-//     onClick?: (e: google.maps.MapMouseEvent) => void;
-//     onIdle?: (map: google.maps.Map) => void;
-//     children?: React.ReactNode;
-// }
-
-// const Map = ({
-//     onClick,
-//     onIdle,
-//     children,
-//     style,
-//     ...options
-// }: MapProps) => {
-//     const ref = React.useRef<HTMLDivElement>(null);
-//     const [map, setMap] = React.useState<google.maps.Map>();
-
-//     React.useEffect(() => {
-//         if (ref.current && !map) {
-//             setMap(new window.google.maps.Map(ref.current, {}))
-//         }
-//     }, [ref, map])
-
-//     // because React does not do deep comparisons, a custom hook is used
-//     // see discussion in https://github.com/googlemaps/js-samples/issues/946
-//     useDeepCompareEffectForMaps(() => {
-//         if (map) {
-//             map.setOptions(options);
-//         }
-//     }, [map, options]);
-
-//     React.useEffect(() => {
-//         if (map) {
-//             ["click", "idle"].forEach((eventName) =>
-//                 google.maps.event.clearListeners(map, eventName)
-//             );
-
-//             if (onClick) {
-//                 map.addListener("click", onClick);
-//             }
-
-//             if (onIdle) {
-//                 map.addListener("idle", () => onIdle(map));
-//             }
-//         }
-//     }, [map, onClick, onIdle]);
-
-//     return (
-//         <>
-//             <div ref={ref} style={style} />
-//             {React.Children.map(children, (child) => {
-//                 if (React.isValidElement(child)) {
-//                     // set the map prop on the child component
-//                     return React.cloneElement(child, { map });
-//                 }
-//             })}
-//         </>
-//     )
-// }
-
-// const Marker: React.FC<google.maps.MarkerOptions> = (options) => {
-//     const [marker, setMarker] = React.useState<google.maps.Marker>();
-
-//     React.useEffect(() => {
-//         if (!marker) {
-//             setMarker(new google.maps.Marker());
-//         }
-
-//         // remove marker from map on unmount
-//         return () => {
-//             if (marker) {
-//                 marker.setMap(null);
-//             }
-//         };
-//     }, [marker]);
-
-//     React.useEffect(() => {
-//         if (marker) {
-//             marker.setOptions(options);
-//         }
-//     }, [marker, options]);
-
-
-//     React.useEffect(() => {
-//         if (marker) {
-//             marker.getPosition()
-//         }
-//     }, [marker])
-
-//     const infowindow = new google.maps.InfoWindow({
-//         content: "<p>Marker Location:" + marker.getPosition() + "</p>",
-//     });
-
-//     React.useEffect(() => {
-//         google.maps.event.addListener(marker, "click", () => {
-//     infowindow.open(map, marker);
-//   });
-//     })
-
-//     return null;
-// }
-
-
-
-
-// const deepCompareEqualsForMaps = createCustomEqual(
-//     (deepEqual) => (a: any, b: any) => {
-//         if (
-//             isLatLngLiteral(a) ||
-//             a instanceof google.maps.LatLng ||
-//             isLatLngLiteral(b) ||
-//             b instanceof google.maps.LatLng
-//         ) {
-//             return new google.maps.LatLng(a).equals(new google.maps.LatLng(b));
-//         }
-
-//         // TODO extend to other types
-
-//         // use fast-equals for other objects
-//         return deepEqual(a, b);
-//     }
-// );
-
-// function useDeepCompareMemoize(value: any) {
-//     const ref = React.useRef();
-
-//     if (!deepCompareEqualsForMaps(value, ref.current)) {
-//         ref.current = value;
-//     }
-
-//     return ref.current;
-// }
-
-// function useDeepCompareEffectForMaps(
-//     callback: React.EffectCallback,
-//     dependencies: any[]
-// ) {
-//     React.useEffect(callback, dependencies.map(useDeepCompareMemoize));
-// }
-
-
-// export default About;
-import Script from 'next/script'
-
+import { createRoot } from "react-dom/client";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import { createCustomEqual } from "fast-equals";
+import { isLatLngLiteral } from "@googlemaps/typescript-guards";
 
 
 const About = () => {
-    const mapRef = React.useRef()
+    const [clicks, setClicks] = React.useState<google.maps.LatLng[]>([]);
+    const [zoom, setZoom] = React.useState(3); // initial zoom
+    const [zip, setZip] = React.useState("")
+    const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
+        lat: 0,
+        lng: 0,    
+    });
+
+    const onClick = (e: google.maps.MapMouseEvent) => {
+        // avoid directly mutating state
+        setClicks([...clicks, e.latLng!]);
+    };
+
+    const onIdle = (m: google.maps.Map) => {
+        console.log("onIdle");
+        setZoom(m.getZoom()!);
+        setCenter(m.getCenter()!.toJSON());
+    };
+
+    const render = (status: Status) => {
+        return <h1>{status}</h1>;
+    };
+
+    function getLatLngByZipcode(zipcode: string) {
+        let geocoder = new google.maps.Geocoder();
+        let address = zipcode;
+        // alert(address)
+        geocoder.geocode({ 'address': 'zipcode ' + address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                let latitude = results[0].geometry.location.lat();
+                let longitude = results[0].geometry.location.lng();
+                alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+            } else {
+                alert("Request failed.")
+            }
+        });
+        // return [latitude, longitude];
+    }
+
+    const form = (
+        <div
+            style={{
+                padding: "1rem",
+                flexBasis: "250px",
+                height: "100%",
+                overflow: "auto",
+            }}
+        >
+            <label htmlFor="zip">Zip Code</label>
+            <input
+                type="number"
+                id="zip"
+                name="zip"
+                value={zip}
+                onChange={(event) => getLatLngByZipcode(String(event.target.value))}
+            />
+            <br />
+            <label htmlFor="zoom">Zoom</label>
+            <input
+                type="number"
+                id="zoom"
+                name="zoom"
+                value={zoom}
+                onChange={(event) => setZoom(Number(event.target.value))}
+            />
+            <br />
+            <label htmlFor="lat">Latitude</label>
+            <input
+                type="number"
+                id="lat"
+                name="lat"
+                value={center.lat}
+                onChange={(event) =>
+                    setCenter({ ...center, lat: Number(event.target.value) })
+                }
+            />
+            <br />
+            <label htmlFor="lng">Longitude</label>
+            <input
+                type="number"
+                id="lng"
+                name="lng"
+                value={center.lng}
+                onChange={(event) =>
+                    setCenter({ ...center, lng: Number(event.target.value) })
+                }
+            />
+            <h3>{clicks.length === 0 ? "Click on map to add markers" : "Clicks"}</h3>
+            {clicks.map((latLng, i) => (
+                <pre key={i}>{JSON.stringify(latLng.toJSON(), null, 2)}</pre>
+            ))}
+            <button onClick={() => setClicks([])}>Clear</button>
+        </div>
+    );
+
+    return (
+        <div className="h-[100vh]">
+            <Wrapper apiKey={process.env.GOOGLEAPI} render={render}>
+                <Map 
+                center={center} 
+                zoom={zoom}
+                onClick={onClick}
+                onIdle={onIdle}
+                    style={{ flexGrow: "1", height: "100%" }}
+                >
+                    {clicks.map((latLng, i) => (
+                        <Marker key={i} position={latLng} />
+                    ))}
+                </Map>
+            </Wrapper>
+            {/* Basic form for controlling center and zoom of map. */}
+            {form}
+        </div>
+    );
+}
+
+
+interface MapProps extends google.maps.MapOptions {
+    style: { [key: string]: string };
+    onClick?: (e: google.maps.MapMouseEvent) => void;
+    onIdle?: (map: google.maps.Map) => void;
+    children?: React.ReactNode;
+}
+
+const Map = ({
+    onClick,
+    onIdle,
+    children,
+    style,
+    ...options
+}: MapProps) => {
+    const ref = React.useRef<HTMLDivElement>(null);
+    const [map, setMap] = React.useState<google.maps.Map>();
+
+    React.useEffect(() => {
+        if (ref.current && !map) {
+            setMap(new window.google.maps.Map(ref.current, {}))
+        }
+    }, [ref, map])
+
+    // because React does not do deep comparisons, a custom hook is used
+    // see discussion in https://github.com/googlemaps/js-samples/issues/946
+    useDeepCompareEffectForMaps(() => {
+        if (map) {
+            map.setOptions(options);
+        }
+    }, [map, options]);
+
+    React.useEffect(() => {
+        if (map) {
+            ["click", "idle"].forEach((eventName) =>
+                google.maps.event.clearListeners(map, eventName)
+            );
+
+            if (onClick) {
+                map.addListener("click", onClick);
+            }
+
+            if (onIdle) {
+                map.addListener("idle", () => onIdle(map));
+            }
+        }
+    }, [map, onClick, onIdle]);
 
     return (
         <>
-            <div className='h-[100vh]' ref={mapRef}></div>
-            <Script src="https://polyfill.io/v3/polyfill.min.js?features=default"></Script>
-            <Script
-                id="google-maps"
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3VCDaWLypkC2vOX_P4J4v-IvhuxadC2k"
-                onReady={() => {
-                    new google.maps.Map(mapRef.current, {
-                        center: { lat: -34.397, lng: 150.644 },
-                        zoom: 8,
-                    })
-                }}
-            />
+            <div ref={ref} style={style} />
+            {React.Children.map(children, (child) => {
+                if (React.isValidElement(child)) {
+                    // set the map prop on the child component
+                    return React.cloneElement(child, { map });
+                }
+            })}
         </>
     )
 }
+
+
+const Marker: React.FC<google.maps.MarkerOptions> = (options) => {
+    const [marker, setMarker] = React.useState<google.maps.Marker>();
+
+    React.useEffect(() => {
+        if (!marker) {
+            setMarker(new google.maps.Marker());
+        }
+
+        // remove marker from map on unmount
+        return () => {
+            if (marker) {
+                marker.setMap(null);
+            }
+        };
+    }, [marker]);
+
+    React.useEffect(() => {
+        if (marker) {
+            marker.setOptions(options);
+        }
+    }, [marker, options]);
+
+
+    React.useEffect(() => {
+        if (marker) {
+            marker.getPosition()
+        }
+    }, [marker])
+   const bubble = '<div style="width:125px; height:auto; overflow:hidden !important;">'  + " to<br /> " + "</div> ";
+    React.useEffect(() => {
+        if (marker) {
+            const infowindow = new window.google.maps.InfoWindow({
+                content: bubble,
+
+            });
+            marker.setOptions(options);
+
+            marker.addListener("click", () => {
+                infowindow.open({
+                    anchor: marker,
+                    shouldFocus: false
+                });
+            });
+        }
+    }, [marker, options]);
+
+    return null;
+}
+
+
+
+
+const deepCompareEqualsForMaps = createCustomEqual(
+    (deepEqual) => (a: any, b: any) => {
+        if (
+            isLatLngLiteral(a) ||
+            a instanceof google.maps.LatLng ||
+            isLatLngLiteral(b) ||
+            b instanceof google.maps.LatLng
+        ) {
+            return new google.maps.LatLng(a).equals(new google.maps.LatLng(b));
+        }
+
+        // TODO extend to other types
+
+        // use fast-equals for other objects
+        return deepEqual(a, b);
+    }
+);
+
+function useDeepCompareMemoize(value: any) {
+    const ref = React.useRef();
+
+    if (!deepCompareEqualsForMaps(value, ref.current)) {
+        ref.current = value;
+    }
+
+    return ref.current;
+}
+
+function useDeepCompareEffectForMaps(
+    callback: React.EffectCallback,
+    dependencies: any[]
+) {
+    React.useEffect(callback, dependencies.map(useDeepCompareMemoize));
+}
+
 
 export default About;
