@@ -140,7 +140,7 @@ const About = () => {
     const [zip, setZip] = React.useState("")
     const [center, setCenter] = React.useState<google.maps.LatLngLiteral>({
         lat: 0,
-        lng: 0,    
+        lng: 0,
     });
 
     const onClick = (e: google.maps.MapMouseEvent) => {
@@ -164,9 +164,11 @@ const About = () => {
         // alert(address)
         geocoder.geocode({ 'address': 'zipcode ' + address }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                let latitude = results[0].geometry.location.lat();
-                let longitude = results[0].geometry.location.lng();
-                alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+                if (results != null) {
+                    let latitude = results[0].geometry.location.lat();
+                    let longitude = results[0].geometry.location.lng();
+                    alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+                }
             } else {
                 alert("Request failed.")
             }
@@ -230,23 +232,102 @@ const About = () => {
         </div>
     );
 
+    const staticform = (
+        <div>
+            <div className="form-group">
+                <input className="form-control" type="text" id="locality" value="" placeholder="Enter your locality" />
+            </div>
+            <div className="form-group">
+                <input className="form-control" type="text" id="city" value="" placeholder="Enter your city" />
+            </div>
+            <div className="form-group">
+                <label htmlFor="zoom">Zoom (between 0 and 100):</label>
+                <input className="form-control" type="range" id="zoom" min="0" value="3" max="100" />
+            </div>
+            <div className="form-group">
+                <input className="form-control" type="number" id="width" value="1000" placeholder="Enter width of map" />
+            </div>
+            <div className="form-group">
+                <input className="form-control" type="number" id="height" value="800" placeholder="Enter height of map" />
+            </div>
+            <div className="form-check">
+                <label className="form-check-label">
+                    <input type="radio" className="form-check-input" value="roadmap" checked name="maptype" />roadmap
+                </label>
+            </div>
+            <div className="form-check">
+                <label className="form-check-label">
+                    <input type="radio" className="form-check-input" value="satellite" name="maptype" />satellite
+                </label>
+            </div>
+            <div className="form-check">
+                <label className="form-check-label">
+                    <input type="radio" className="form-check-input" value="hybrid" name="maptype" />hybrid
+                </label>
+            </div>
+            <div className="form-check">
+                <label className="form-check-label">
+                    <input type="radio" className="form-check-input" value="terrain" name="maptype" />terrain
+                </label>
+            </div>
+        </div>
+    )
+
+    const getMap = (e: React.MouseEvent<HTMLButtonElement>): void => {
+        e.preventDefault();
+
+        const locality = (document.getElementById('locality') as HTMLInputElement).value
+        const city = (document.getElementById('city') as HTMLInputElement).value
+        const width = (document.getElementById('width') as HTMLInputElement).value
+        const height = (document.getElementById('height') as HTMLInputElement).value
+        const zoom = (document.getElementById('zoom') as HTMLInputElement).value
+        const maptype = (document.querySelector('input[name="maptype"]:checked') as HTMLInputElement).value
+        // alert(maptype)
+
+        for (let i = 0; i < 10; i++) {
+            if ((i % 7) == 0) {
+                alert("Money")
+            } else if ((i % 5) == 0) {
+                alert("Dolly")
+            }
+        }
+
+        const mapurl = `https://maps.googleapis.com/maps/api/staticmap?&zoom=10&size=${width}x${height}&maptype=${maptype}&path=color:0x0000ff|weight:5|San+Francisco,CA|Oakland,CA&markers=size:mid%7Ccolor:red%7CSan+Francisco,CA%7COakland,CA%7CSan+Jose,CA&key=AIzaSyC3VCDaWLypkC2vOX_P4J4v-IvhuxadC2k`
+
+        const map = document.getElementById('map') as HTMLImageElement || null
+
+        if (map != null) {
+            map.src = mapurl
+        }
+    }
+
+  
+
     return (
         <div className="h-[100vh]">
             <Wrapper apiKey={'AIzaSyC3VCDaWLypkC2vOX_P4J4v-IvhuxadC2k'} render={render}>
-                <Map 
-                center={center} 
-                zoom={zoom}
-                onClick={onClick}
-                onIdle={onIdle}
+                <Map
+                    center={center}
+                    zoom={zoom}
+                    onClick={onClick}
+                    onIdle={onIdle}
                     style={{ flexGrow: "1", height: "100%" }}
                 >
                     {clicks.map((latLng, i) => (
-                        <Marker key={i} position={latLng}/>
+                        <Marker key={i} position={latLng} />
                     ))}
                 </Map>
             </Wrapper>
             {/* Basic form for controlling center and zoom of map. */}
             {form}
+            {staticform}
+            <button className='border-2 border-red-500' onClick={getMap}>Get Map</button>
+            <br />
+            <div className='border-2 border-black'>
+                <div className='border-2 border-blue-500 w-1/2 h-1/3'>
+                    <img className='h-full' id="map" />
+                </div>
+            </div>
         </div>
     );
 }
@@ -308,12 +389,12 @@ const Map = ({
                     new google.maps.LatLng(28.613939, 77.209021),
                     new google.maps.LatLng(51.507351, -0.127758),
                     new google.maps.LatLng(40.712784, -74.005941),
-                    new google.maps.LatLng(28.213545, 94.868713) 
+                    new google.maps.LatLng(28.213545, 94.868713)
                 ],
 
                 strokeColor: "#000FFF",
                 strokeOpacity: 0.6,
-                strokeWeight: 2
+                strokeWeight: 2,
             })
 
             polyline.setMap(map)
@@ -364,7 +445,7 @@ const Marker: React.FC<google.maps.MarkerOptions> = (options) => {
         }
     }, [marker])
 
-   const bubble = '<div style="width:125px; height:auto; overflow:hidden !important;">'  + " to<br /> " + "</div> ";
+    const bubble = '<div style="width:125px; height:auto; overflow:hidden !important;">' + " to<br /> " + "</div> ";
 
     React.useEffect(() => {
         if (marker) {
@@ -390,7 +471,7 @@ const Marker: React.FC<google.maps.MarkerOptions> = (options) => {
 
 
 const deepCompareEqualsForMaps = createCustomEqual(
-    (deepEqual) => (a: any, b: any) => {
+    (deepEqual) => (a: any, b: any, meta?: undefined) => {
         if (
             isLatLngLiteral(a) ||
             a instanceof google.maps.LatLng ||
@@ -426,3 +507,5 @@ function useDeepCompareEffectForMaps(
 
 
 export default About;
+
+
