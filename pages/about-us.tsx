@@ -143,6 +143,7 @@ const About = () => {
         lng: 0,
     });
 
+
     const onClick = (e: google.maps.MapMouseEvent) => {
         // avoid directly mutating state
         setClicks([...clicks, e.latLng!]);
@@ -158,23 +159,6 @@ const About = () => {
         return <h1>{status}</h1>;
     };
 
-    function getLatLngByZipcode(zipcode: string) {
-        let geocoder = new google.maps.Geocoder();
-        let address = zipcode;
-        // alert(address)
-        geocoder.geocode({ 'address': 'zipcode ' + address }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                if (results != null) {
-                    let latitude = results[0].geometry.location.lat();
-                    let longitude = results[0].geometry.location.lng();
-                    alert("Latitude: " + latitude + "\nLongitude: " + longitude);
-                }
-            } else {
-                alert("Request failed.")
-            }
-        });
-        // return [latitude, longitude];
-    }
 
     const form = (
         <div
@@ -187,11 +171,11 @@ const About = () => {
         >
             <label htmlFor="zip">Zip Code</label>
             <input
-                type="number"
+                type="string"
                 id="zip"
                 name="zip"
                 value={zip}
-                onChange={(event) => getLatLngByZipcode(String(event.target.value))}
+                onChange={(event) => setZip(String(event.target.value))}
             />
             <br />
             <label htmlFor="zoom">Zoom</label>
@@ -232,76 +216,66 @@ const About = () => {
         </div>
     );
 
-    const staticform = (
-        <div>
-            <div className="form-group">
-                <input className="form-control" type="text" id="locality" value="" placeholder="Enter your locality" />
-            </div>
-            <div className="form-group">
-                <input className="form-control" type="text" id="city" value="" placeholder="Enter your city" />
-            </div>
-            <div className="form-group">
-                <label htmlFor="zoom">Zoom (between 0 and 100):</label>
-                <input className="form-control" type="range" id="zoom" min="0" value="3" max="100" />
-            </div>
-            <div className="form-group">
-                <input className="form-control" type="number" id="width" value="1000" placeholder="Enter width of map" />
-            </div>
-            <div className="form-group">
-                <input className="form-control" type="number" id="height" value="800" placeholder="Enter height of map" />
-            </div>
-            <div className="form-check">
-                <label className="form-check-label">
-                    <input type="radio" className="form-check-input" value="roadmap" checked name="maptype" />roadmap
-                </label>
-            </div>
-            <div className="form-check">
-                <label className="form-check-label">
-                    <input type="radio" className="form-check-input" value="satellite" name="maptype" />satellite
-                </label>
-            </div>
-            <div className="form-check">
-                <label className="form-check-label">
-                    <input type="radio" className="form-check-input" value="hybrid" name="maptype" />hybrid
-                </label>
-            </div>
-            <div className="form-check">
-                <label className="form-check-label">
-                    <input type="radio" className="form-check-input" value="terrain" name="maptype" />terrain
-                </label>
-            </div>
-        </div>
-    )
+    const Staticform = () => {
+        const [zip, setZip] = React.useState("")
 
-    const getMap = (e: React.MouseEvent<HTMLButtonElement>): void => {
-        e.preventDefault();
+        const [city, setCity] = React.useState("");
+        const [city2, setCity2] = React.useState("");
 
-        const locality = (document.getElementById('locality') as HTMLInputElement).value
-        const city = (document.getElementById('city') as HTMLInputElement).value
-        const width = (document.getElementById('width') as HTMLInputElement).value
-        const height = (document.getElementById('height') as HTMLInputElement).value
-        const zoom = (document.getElementById('zoom') as HTMLInputElement).value
-        const maptype = (document.querySelector('input[name="maptype"]:checked') as HTMLInputElement).value
-        // alert(maptype)
+        const getMap = (e: React.MouseEvent<HTMLButtonElement>): void => {
+            e.preventDefault();
 
-        for (let i = 0; i < 10; i++) {
-            if ((i % 7) == 0) {
-                alert("Money")
-            } else if ((i % 5) == 0) {
-                alert("Dolly")
+            const mapurl = `https://maps.googleapis.com/maps/api/staticmap?&zoom=10&size=600x600&maptype=&path=color:0x0000ff|weight:5|${city},CA|7C${city2},CA&markers=size:mid%7Ccolor:red%7C${city},CA%7C${city2},CA&key=AIzaSyC3VCDaWLypkC2vOX_P4J4v-IvhuxadC2k`
+
+            const map = document.getElementById('map') as HTMLImageElement || null
+
+            if (map != null) {
+                map.src = mapurl
             }
         }
 
-        const mapurl = `https://maps.googleapis.com/maps/api/staticmap?&zoom=10&size=${width}x${height}&maptype=${maptype}&path=color:0x0000ff|weight:5|San+Francisco,CA|Oakland,CA&markers=size:mid%7Ccolor:red%7CSan+Francisco,CA%7COakland,CA%7CSan+Jose,CA&key=AIzaSyC3VCDaWLypkC2vOX_P4J4v-IvhuxadC2k`
 
-        const map = document.getElementById('map') as HTMLImageElement || null
-
-        if (map != null) {
-            map.src = mapurl
-        }
+        return (
+            <div
+                style={{
+                    padding: "1rem",
+                    flexBasis: "250px",
+                    height: "100%",
+                    overflow: "auto",
+                }}
+            >
+                <label htmlFor="zip">City</label>
+                <input
+                    type="string"
+                    id="city"
+                    name="city"
+                    value={city}
+                    onChange={(event) => setCity(String(event.target.value))}
+                />
+                <br />
+                <label htmlFor="zoom">City 2</label>
+                <input
+                    type="string"
+                    id="city2"
+                    name="city2"
+                    value={city2}
+                    onChange={(event) => setCity2(String(event.target.value))}
+                />
+                <br />
+                <label htmlFor="zoom">Zoom</label>
+                <input
+                    type="number"
+                    id="zoom"
+                    name="zoom"
+                    value={zoom}
+                    onChange={(event) => setZoom(Number(event.target.value))}
+                />
+                <br />
+                <button className='border-2 border-red-500' onClick={getMap}>Get Map</button>
+            </div>
+        )
     }
 
-  
 
     return (
         <div className="h-[100vh]">
@@ -320,8 +294,7 @@ const About = () => {
             </Wrapper>
             {/* Basic form for controlling center and zoom of map. */}
             {form}
-            {staticform}
-            <button className='border-2 border-red-500' onClick={getMap}>Get Map</button>
+            <Staticform />
             <br />
             <div className='border-2 border-black'>
                 <div className='border-2 border-blue-500 w-1/2 h-1/3'>
