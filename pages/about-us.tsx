@@ -218,14 +218,13 @@ const About = () => {
 
     const Staticform = () => {
         const [zip, setZip] = React.useState("")
-
         const [city, setCity] = React.useState("");
         const [city2, setCity2] = React.useState("");
 
         const getMap = (e: React.MouseEvent<HTMLButtonElement>): void => {
             e.preventDefault();
 
-            const mapurl = `https://maps.googleapis.com/maps/api/staticmap?&zoom=10&size=600x600&maptype=&path=color:0x0000ff|weight:5|${city},CA|7C${city2},CA&markers=size:mid%7Ccolor:red%7C${city},CA%7C${city2},CA&key=AIzaSyC3VCDaWLypkC2vOX_P4J4v-IvhuxadC2k`
+            const mapurl = `https://maps.googleapis.com/maps/api/staticmap?&size=600x600&maptype=&path=color:0x0000ff|weight:5|${city}, California|7C${city2}, California&markers=size:mid%7Ccolor:red%7C${city}, California%7C${city2}, California&key=AIzaSyC3VCDaWLypkC2vOX_P4J4v-IvhuxadC2k`
 
             const map = document.getElementById('map') as HTMLImageElement || null
 
